@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>rezultate-chestionar</title>
+   
+  </head>
+<h2>Rezultatele chestionarului:</h2>
+<% var raspCor=0; %>
+<% for(let i = 0; i < intrebari.length; i++) { %>
+  <h3>Întrebarea <%= i + 1 %>:</h3>
+  <p>Răspunsul tău: <%= req.body['intrebare'+i] %></p>
+  <p>Răspunsul corect: <%= intrebari[i].variante[intrebari[i].corect] %></p>
+  <% if (req.body['intrebare'+i] == intrebari[i].corect) { %>
+    <p class="corect">Răspunsul este corect!</p>
+<% raspCor++; } else { %>
+    <p class="gresit">Răspunsul este greșit!</p>
+  <% } %>
+<% } %>
+<p>Numar de raspunsuri corecte:<%= raspCor%></p>
+</html>
+

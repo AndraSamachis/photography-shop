@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Index</title>
+</head>
+<body>
+  <!-- ... -->
+  <style>
+    body {
+      background-color: rgb(6, 100, 100);
+      color: white;
+      font-size: 35px;
+      margin-left: 20 px;
+      font-family: Arial, sans-serif;
+    }
+  
+    h1 {
+      font-size: 35px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+
+    }
+    p {
+      font-size: 35px;
+      font-weight: bold;
+      margin-bottom: 30px;
+
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 32px;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  
+    li {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+  
+    form {
+      display: block;
+    }
+  
+    button[type="submit"] {
+    width: 200px;
+    height: 50px; 
+    font-size: 18px; 
+    
+  }
+  </style>
+  
+<% if (numeUtilizator &&nume&&prenume) { %>
+  <h1>Bine ai venit, <%= nume %> <%= prenume %>!</h1><br><br>
+<% } else { %>
+  <h1>Bine ai venit!</h1>
+<% } %>
+
+  <a href="/autentificare">Autentificare</a>
+  <% if (numeUtilizator &&nume&&prenume) { %>
+  <a href="/vizualizare-cos">Vizualizare coș</a>
+  <% } %>
+  <form action="/creare-bd" method="get">
+    <button type="submit">Creare BD</button>
+  </form>
+
+  <form action="/inserare-bd" method="get">
+    <button type="submit">Inserare BD</button>
+  </form>
+  <% if (numeUtilizator &&nume&&prenume) { %>
+  <form action="/delogare" method="post">
+    <button type="submit">Delogare</button>
+  </form>
+  <% } %>
+  
+<h2>Produse</h2>
+<% if (typeof produse !=='undefined') { %>
+  <ul>
+    <% produse.forEach(function(produs) { %>
+      <li>
+        <%= produs.nume %> - <%= produs.pret %> lei
+        <% if (numeUtilizator) { %>
+          <form action="/adaugare_cos" method="post" style="display: inline;">
+            <input type="hidden" name="produsId" value="<%= produs.id %>">
+            <button type="submit">Adaugă în coș</button>
+          </form>
+        <% } %>
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p><b>Nu există produse disponibile.</b></p>
+<% } %>
+
+</body>
+</html>

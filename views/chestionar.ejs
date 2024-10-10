@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chestionar</title>
+   
+  </head>
+  <body>
+    <h1>Chestionar</h1>
+    <form action="/rezultat-chestionar" method="POST">
+      <% for(let i = 0; i < intrebari.length; i++) { %>
+        <h3><%= intrebari[i].intrebare %></h3>
+        <% for(let j = 0; j < intrebari[i].variante.length; j++) { %>
+          <label>
+            <input type="radio" name="intrebare<%= i %>" value="<%= j %>">
+            <%= intrebari[i].variante[j] %>
+          </label><br>
+          <% } %>
+          <% } %>
+          <button type="submit">Trimite</button>
+    </form>
+    </body>
+  </html>

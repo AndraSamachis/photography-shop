@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vizualizare coș</title>
+</head>
+<body>
+    <style>
+        p{
+            font-size: 25px;
+        }
+    </style>
+  <h1>Coșul de cumpărături</h1>
+  <% if (cosProduse && cosProduse.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Produs</th>
+          <th>Pret</th>
+          <th>Cantitate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% cosProduse.forEach(function(produs) { %>
+          <tr>
+            <td><%= produs.nume %></td>
+            <td><%= produs.pret %> lei</td>
+            <td><%= produs.cantitate %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p><b>Nu există produse în coș.</b></p>
+  <% } %>
+</body>
+</html>
