@@ -1,0 +1,18 @@
+[
+    {
+      "intrebare": "Cine este considerat părintele fotografiei moderne?",
+      "variante": ["Van Gogh", "Leonardo Da Vinci", "Louis-Jacques Mande Daguerre", "Monet"],
+      "corect": 2
+    },
+    {
+      "intrebare": "Cine a realizat prima fotografie?",
+      "variante": ["Ansel Adams", "Joseph Nicéphore Niépce","Diane Arbus", "Dorothea Lange"],
+      "corect": 1
+    },
+    {
+      "intrebare": "Care este cel mai important factor pentru a obține o fotgrafie reușită?",
+      "variante": ["Lumina", "Fundalul", "Obiectivul", "Focalizarea"],
+      "corect": 0
+    }
+  ]
+  

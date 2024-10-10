@@ -1,0 +1,17 @@
+[
+    {
+      "utilizator": "test",
+      "parola": "test",
+      "nume": "Andra",
+      "prenume": "Samachiș",
+      "tip":"ADMIN"
+    },
+    {
+      "utilizator": "aaa",
+      "parola": "aaa",
+      "nume": "Iustina",
+      "prenume": "Corugă",
+      "tip":"USER"
+    }
+  ]
+  
